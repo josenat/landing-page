@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // registrar títulos por defecto
+    	$this->call(TitlesTableSeeder::class);
     }
 }

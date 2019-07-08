@@ -27,11 +27,11 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the landing page.
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexAux()
+    public function landingPage()
     {
         return view('index');
     }

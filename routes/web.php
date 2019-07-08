@@ -20,6 +20,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/index', 'HomeController@indexAux');
+Route::get('/index', 'HomeController@landingPage');
 
 Route::resource('titles', 'titleController');

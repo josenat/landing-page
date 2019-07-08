@@ -15,7 +15,7 @@
 	  <nav class="navbar navbar-light bg-light static-top">
 	    <div class="container">
 		  <a class="navbar-brand" href="#">Landing Page</a>
-	      <a class="btn btn-primary" href="{{ url('home') }}">InfyOm Admin LTE</a>
+	      <a class="btn btn-primary" href="{{ url('home') }}">Admin Panel</a>
 	    </div>
 	  </nav>
 
@@ -46,43 +46,8 @@
 	    </div>
 	  </header>
 
-	  <!-- Cuadro de íconos -->
-	  <section class="features-icons bg-light text-center">
-	    <div class="container">
-	      <div class="row">
-	        <div class="col-lg-4">
-	          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-	            <div class="features-icons-icon d-flex">
-	              <i class="icon-screen-desktop m-auto text-primary"></i>
-	            </div>
-	            <h3>Diseño Adaptable</h3>
-	            <p class="lead mb-0">¡Los diseños se verán geniales en cualquier dispositivo, sin importar el tamaño!</p>
-	          </div>
-	        </div>
-	        <div class="col-lg-4">
-	          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-	            <div class="features-icons-icon d-flex">
-	              <i class="icon-layers m-auto text-primary"></i>
-	            </div>
-	            <h3>Bootstrap 4 Listo</h3>
-	            <p class="lead mb-0">¡Con la última versión del nuevo marco de Bootstrap 4!</p>
-	          </div>
-	        </div>
-	        <div class="col-lg-4">
-	          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-	            <div class="features-icons-icon d-flex">
-	              <i class="icon-check m-auto text-primary"></i>
-	            </div>
-	            <h3>Fácil de Usar</h3>
-	            <p class="lead mb-0">Listo para usarse con su propio contenido, o personalizarlo a su gusto!</p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </section>
-
 	  <!-- Sección de Imágenes -->
-	  <section class="showcase">
+	  <section class="showcase" style="margin-top: 60px">
 	    <div class="container-fluid p-0">
 	      <div class="row no-gutters">
 
@@ -109,38 +74,8 @@
 	    </div>
 	  </section>
 
-	  <!-- Testimonios -->
-	  <section class="testimonials text-center bg-light">
-	    <div class="container">
-	      <h2 class="mb-5">Lo que la gente esta diciendo...</h2>
-	      <div class="row">
-	        <div class="col-lg-4">
-	          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-	            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-	            <h5>Sofia P.</h5>
-	            <p class="font-weight-light mb-0">"¡Esto es fantástico! Muchas gracias chicos!"</p>
-	          </div>
-	        </div>
-	        <div class="col-lg-4">
-	          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-	            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-	            <h5>Carlos L.</h5>
-	            <p class="font-weight-light mb-0">"Bootstrap es increíble. Lo he estado usando para crear muchas páginas de aterrizaje súper agradables."</p>
-	          </div>
-	        </div>
-	        <div class="col-lg-4">
-	          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-	            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-	            <h5>Maria R.</h5>
-	            <p class="font-weight-light mb-0">"¡Muchas gracias por hacer que estos recursos gratuitos estén disponibles para nosotros!"</p>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	  </section>
-
 	  <!-- Llamadas de Acción -->
-	  <section class="call-to-action text-white text-center">
+	  <section class="call-to-action text-white text-center" style="margin-top: 60px">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">
