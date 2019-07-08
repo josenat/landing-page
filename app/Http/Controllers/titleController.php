@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatetitleRequest;
 use App\Repositories\titleRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Title;
 use Flash;
 use Response;
 
@@ -29,10 +30,26 @@ class titleController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $titles = $this->titleRepository->all();
+        $exito = false;
+        if ($titles = $this->titleRepository->all()) {
+            $exito = true;
+        }
 
-        return view('titles.index')
-            ->with('titles', $titles);
+        // si la solicitud es a través de ajax     
+        if ($request->ajax()) {
+            // si ocurrió un error
+            if ($exito == false) {
+                // retornar mensaje en formato json
+                return response()->json("Error de operacion");
+            }
+            // retornar data en formato json
+            return response()->json($titles);
+        
+        } else {  
+            return view('titles.index')->with('titles', $titles);
+        } 
+
+        
     }
 
     /**
