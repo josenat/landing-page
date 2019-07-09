@@ -11,5 +11,5 @@
 </li>
 
 <li class="">
-    <a href="{!! url('index') !!}"><i class="fa fa-edit"></i><span>Landing Page</span></a>
+    <a href="{!! url('index') !!}" target="_blank"><i class="fa fa-edit"></i><span>Landing Page</span></a>
 </li>

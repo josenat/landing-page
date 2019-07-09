@@ -7,7 +7,9 @@ use App\Http\Requests\UpdateImageTitleRequest;
 use App\Repositories\ImageTitleRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use App\Models\ImageTitle; use App\Models\Image;
+use App\Models\ImageTitle; 
+use App\Models\Image;
+use App\Models\Title;
 use Flash;
 use Response;
 
@@ -42,7 +44,10 @@ class ImageTitleController extends AppBaseController
      */
     public function create()
     {
-        return view('image_titles.create');
+        $titles = Title::pluck('description', 'id');
+        $images = Image::pluck('path', 'id');
+
+        return view('image_titles.create', compact('titles', 'images'));
     }
 
     /**
@@ -54,11 +59,19 @@ class ImageTitleController extends AppBaseController
      */
     public function store(CreateImageTitleRequest $request)
     {
+        // validar si la fila seleccionada ya está en uso
+        $row_num = ImageTitle::where('row_num',$request{'row_num'})->get();
+        if (count($row_num) >= 1) {
+            Flash::error('La fila seleccionada ya está en uso por otra relación.');
+
+            return redirect(route('imageTitles.index'));
+        }
+        
         $input = $request->all();
 
         $imageTitle = $this->imageTitleRepository->create($input);
 
-        Flash::success('Image Title saved successfully.');
+        Flash::success('Image-Title saved successfully.');
 
         return redirect(route('imageTitles.index'));
     }
@@ -100,7 +113,10 @@ class ImageTitleController extends AppBaseController
             return redirect(route('imageTitles.index'));
         }
 
-        return view('image_titles.edit')->with('imageTitle', $imageTitle);
+        $titles = Title::pluck('description', 'id');
+        $images = Image::pluck('path', 'id');
+
+        return view('image_titles.edit', compact('imageTitle', 'titles', 'images'));
     }
 
     /**
@@ -117,6 +133,14 @@ class ImageTitleController extends AppBaseController
 
         if (empty($imageTitle)) {
             Flash::error('Image Title not found');
+
+            return redirect(route('imageTitles.index'));
+        }
+        
+        // validar si la fila seleccionada ya está en uso
+        $row_num = ImageTitle::where('row_num',$request{'row_num'})->get();
+        if (count($row_num) >= 1) {
+            Flash::error('La fila seleccionada ya está en uso por otra relación.');
 
             return redirect(route('imageTitles.index'));
         }

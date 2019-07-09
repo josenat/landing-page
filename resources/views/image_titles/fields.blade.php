@@ -1,41 +1,21 @@
 <!-- Title Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
     {!! Form::label('title_id', 'Título:') !!}
-    {{ Form::select('title_id', $imageTitle, null, ['class' => 'form-control']) }}
+    {{ Form::select('title_id', $titles, null, ['class' => 'form-control']) }}
+</div>
+<div class="clearfix"></div>
+ 
+<!-- Path Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('path', 'Imágen:') !!}
+    {{ Form::select('image_id', $images, null, ['class' => 'form-control']) }}
 </div>
 <div class="clearfix"></div>
 
-<!-- Image Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('image_id', 'Imágen:') !!}
-				<div class="table-responsive">
-					<table class="table table-striped" id="lista">
-						<thead>
-							<th>    </th>
-							<th>N°  </th>
-							<th>Imágen</th>
-						</thead>
-						@php static $i=0; @endphp
-						@foreach($imagenes as $imagen)					
-							<tbody>
-								<td>
-									<input type="radio" name="item" value="{{ $imagen->id }}">
-								</td>
-								<td>
-									@php echo ++$i; @endphp
-								</td>
-								<td>
-									<img src="{{ $imagen->path }}" class="img-responsive"/>
-								</td>
-							</tbody>
-						@endforeach
-					</table>
-					{{--
-				    <div class="col-md-4 col-md-offset-4 column">                                     
-				        {{$imagenes->render()}}       
-				    </div>	
-				    --}}				
-				</div>	
+<!-- Row Field -->
+<div class="form-group col-sm-12">
+    {!! Form::label('row_num', 'Nº Fila:') !!}
+    {{ Form::select('row_num', array('1'=>'Primera Fila','2'=>'Segunda Fila','3'=>'Tercera Fila','4'=>'Cuarta Fila','5'=>'Quinta Fila'), null, ['class' => 'form-control']) }}
 </div>
 <div class="clearfix"></div>
 

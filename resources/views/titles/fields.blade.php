@@ -1,7 +1,7 @@
 <!-- Description Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-12">
     {!! Form::label('description', 'Descripción:') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+    {!! Form::text('description', null, ['class' => 'form-control', 'id' => 'editor']) !!}
 </div>
 
 <!-- Submit Field -->

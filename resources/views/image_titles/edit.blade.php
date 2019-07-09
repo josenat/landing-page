@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Actualizar Relación
+            Editar Relación
         </h1>
    </section>
    <div class="content">

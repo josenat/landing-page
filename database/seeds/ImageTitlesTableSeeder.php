@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ImagesTableSeeder extends Seeder
+class ImageTitlesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,44 +11,55 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('images')->insert([
+        DB::table('image_titles')->insert([
         	'id'           => 1,
-            'path'         => 'bg-masthead.jpg',
+            'title_id'     => 1,
+            'image_id'     => 1,
+            'row_num'      => 1,
 			'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'deleted_at'   => null
         ]);
 
-        DB::table('images')->insert([
+        DB::table('image_titles')->insert([
         	'id'           => 2,
-            'path'         => 'bg-showcase-1.jpg',
+            'title_id'     => 2,
+            'image_id'     => 2,
+            'row_num'      => 2,
 			'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'deleted_at'   => null
         ]);
 
-        DB::table('images')->insert([
+        DB::table('image_titles')->insert([
         	'id'           => 3,
-            'path'         => 'bg-showcase-2.jpg',
+            'title_id'     => 3,
+            'image_id'     => 3,
+            'row_num'      => 3,
 			'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'deleted_at'   => null
         ]);
 
-        DB::table('images')->insert([
+        DB::table('image_titles')->insert([
         	'id'           => 4,
-            'path'         => 'bg-showcase-3.jpg',
+            'title_id'     => 4,
+            'image_id'     => 4,
+            'row_num'      => 4,
 			'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
 			'deleted_at'   => null
         ]);
 
-        DB::table('images')->insert([
-            'id'           => 5,
-            'path'         => 'bg-showcase-4.jpg',
-            'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
-            'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
-            'deleted_at'   => null
+        DB::table('image_titles')->insert([
+        	'id'           => 5,
+            'title_id'     => 5,
+            'image_id'     => 5,
+            'row_num'      => 5,
+			'created_at'   => \Carbon\Carbon::now()->toDateTimeString(),
+			'updated_at'   => \Carbon\Carbon::now()->toDateTimeString(),
+			'deleted_at'   => null
         ]);
+
     }
 }

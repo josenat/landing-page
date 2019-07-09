@@ -75,7 +75,7 @@
 	  </section>
 
 	  <!-- Llamadas de Acción -->
-	  <section class="call-to-action text-white text-center" style="margin-top: 60px; background: url(/img/bg-masthead.jpg) no-repeat center center;">
+	  <section class="call-to-action text-white text-center" style="margin-top: 60px; background: url(/img/bg-showcase-4.jpg) no-repeat center center;">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">

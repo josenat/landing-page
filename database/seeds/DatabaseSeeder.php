@@ -17,5 +17,7 @@ class DatabaseSeeder extends Seeder
     	$this->call(TitlesTableSeeder::class);
         // registrar imágenes por defecto
         $this->call(ImagesTableSeeder::class);
+        // registrar relaciones de imágenes y títulos por defecto
+        $this->call(ImageTitlesTableSeeder::class);
     }
 }
