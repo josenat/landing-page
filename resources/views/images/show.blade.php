@@ -3,20 +3,15 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Título
+            Imágen
         </h1>
     </section>
     <div class="content">
-        @include('adminlte-templates::common.errors')
         <div class="box box-primary">
-
             <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'titles.store']) !!}
-
-                        @include('titles.fields')
-
-                    {!! Form::close() !!}
+                <div class="row" style="padding-left: 20px">
+                    @include('images.show_fields')
+                    <a href="{!! route('images.index') !!}" class="btn btn-default">Volver</a>
                 </div>
             </div>
         </div>

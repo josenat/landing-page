@@ -11,7 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // registrar usuario por defecto
+        $this->call(UsersTableSeeder::class);
         // registrar títulos por defecto
     	$this->call(TitlesTableSeeder::class);
+        // registrar imágenes por defecto
+        $this->call(ImagesTableSeeder::class);
     }
 }

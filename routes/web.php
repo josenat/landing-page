@@ -22,4 +22,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/index', 'HomeController@landingPage');
 
-Route::resource('titles', 'titleController');
+Route::resource('titles', 'TitleController');
+
+Route::resource('images', 'ImageController');
+Route::resource('images', 'ImageController');
+Route::resource('imageTitles', 'ImageTitleController');

@@ -5,7 +5,7 @@
     <title>Landing Page</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/app.css?v='.rand()) }}" rel="stylesheet" type="text/css">
     @yield('css')
 </head>
 
@@ -20,7 +20,7 @@
 	  </nav>
 
 	  <!-- Cabecera -->
-	  <header class="masthead text-white text-center">
+	  <header class="masthead text-white text-center" style="background: url(/img/bg-masthead.jpg) no-repeat center center;">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">
@@ -75,7 +75,7 @@
 	  </section>
 
 	  <!-- Llamadas de Acción -->
-	  <section class="call-to-action text-white text-center" style="margin-top: 60px">
+	  <section class="call-to-action text-white text-center" style="margin-top: 60px; background: url(/img/bg-masthead.jpg) no-repeat center center;">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">
@@ -147,7 +147,7 @@
 	
 	</div>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js?v='.rand()) }}"></script>
     @yield('scripts')
 
 </body>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>InfyOm Generator</title>
+    <title>Admin Panel</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
     <!-- Bootstrap 3.3.7 -->
@@ -98,7 +98,7 @@
 
         <!-- Main Footer -->
         <footer class="main-footer" style="max-height: 100px;text-align: center">
-            <strong>Copyright © 2016 <a href="#">Company</a>.</strong> All rights reserved.
+            <strong>Copyright © 2019 <a href="#">Company</a>.</strong> All rights reserved.
         </footer>
 
     </div>
@@ -149,6 +149,8 @@
     </div>
     @endif
 
+    <input type="hidden" id="selectedElement">
+
     <!-- jQuery 3.1.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
@@ -160,6 +162,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+
+    <script src="{{ asset('js/script.js?vers='.rand()) }}"></script>
 
     @yield('scripts')
 </body>

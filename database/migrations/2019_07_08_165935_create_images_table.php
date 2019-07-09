@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTitlesTable extends Migration
+class CreateImagesTable extends Migration
 {
 
     /**
@@ -13,9 +13,9 @@ class CreateTitlesTable extends Migration
      */
     public function up()
     {
-        Schema::create('titles', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('description', 255);
+            $table->String('path');
             $table->timestamps();
             $table->softDeletes();
 
@@ -29,6 +29,6 @@ class CreateTitlesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('titles');
+        Schema::drop('images');
     }
 }

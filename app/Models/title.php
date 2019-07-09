@@ -45,5 +45,12 @@ class title extends Model
         'description' => 'required'
     ];
 
+    /**
+     * Obtener todas las imágenes vinculadas al título
+     */
+    public function images()
+    {
+        return $this->belongsToMany('App\Models\image', 'image_titles');
+    } 
     
 }

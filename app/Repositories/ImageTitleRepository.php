@@ -2,22 +2,24 @@
 
 namespace App\Repositories;
 
-use App\Models\Image;
+use App\Models\ImageTitle;
 use App\Repositories\BaseRepository;
 
 /**
- * Class ImageRepository
+ * Class ImageTitleRepository
  * @package App\Repositories
- * @version July 8, 2019, 4:59 pm UTC
+ * @version July 8, 2019, 5:03 pm UTC
 */
 
-class ImageRepository extends BaseRepository
+class ImageTitleRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'path'
+        'title_id',
+        'image_id',
+        'row_num'
     ];
 
     /**
@@ -35,6 +37,6 @@ class ImageRepository extends BaseRepository
      **/
     public function model()
     {
-        return Image::class;
+        return ImageTitle::class;
     }
 }

@@ -11,7 +11,7 @@ use App\Models\Title;
 use Flash;
 use Response;
 
-class titleController extends AppBaseController
+class TitleController extends AppBaseController
 {
     /** @var  titleRepository */
     private $titleRepository;

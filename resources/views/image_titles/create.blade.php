@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Título
+            Crear relación
         </h1>
     </section>
     <div class="content">
@@ -12,9 +12,9 @@
 
             <div class="box-body">
                 <div class="row">
-                    {!! Form::open(['route' => 'titles.store']) !!}
+                    {!! Form::open(['route' => 'imageTitles.store', 'enctype' => 'multipart/form-data']) !!}
 
-                        @include('titles.fields')
+                        @include('image_titles.fields')
 
                     {!! Form::close() !!}
                 </div>

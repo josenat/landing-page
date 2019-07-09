@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Título
+            Actualizar Relación
         </h1>
    </section>
    <div class="content">
@@ -11,9 +11,9 @@
        <div class="box box-primary">
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($title, ['route' => ['titles.update', $title->id], 'method' => 'patch']) !!}
+                   {!! Form::model($imageTitle, ['route' => ['imageTitles.update', $imageTitle->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
 
-                        @include('titles.fields')
+                        @include('image_titles.fields')
 
                    {!! Form::close() !!}
                </div>

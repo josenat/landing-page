@@ -103,8 +103,9 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' // optional
         });
-        $('.correo').val('jhonder.natera@gmail.com');
-        $('.password').val(10203040);
+        
+        //$('.correo').val('jhonder.natera@gmail.com');
+        //$('.password').val(10203040);
     });
 </script>
 </body>
