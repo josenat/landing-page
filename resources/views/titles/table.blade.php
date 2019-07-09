@@ -9,7 +9,7 @@
         <tbody>
         @foreach($titles as $title)
             <tr>
-                <td>{!! $title->description !!}</td>
+                <td>{!! substr($title->description, 0, 160) !!}...</td>
                 <td>
                     {!! Form::open(['route' => ['titles.destroy', $title->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

@@ -59,7 +59,7 @@ class ImageController extends AppBaseController
 
         $image = $this->imageRepository->create($input);
 
-        Flash::success('Image saved successfully.');
+        Flash::success('Imágen registrada exitósamente.');
 
         return redirect(route('images.index'));
     }
@@ -76,7 +76,7 @@ class ImageController extends AppBaseController
         $image = $this->imageRepository->find($id);
 
         if (empty($image)) {
-            Flash::error('Image not found');
+            Flash::error('Imágen no encontrada');
 
             return redirect(route('images.index'));
         }
@@ -96,7 +96,7 @@ class ImageController extends AppBaseController
         $image = $this->imageRepository->find($id);
 
         if (empty($image)) {
-            Flash::error('Image not found');
+            Flash::error('Imágen no encontrada');
 
             return redirect(route('images.index'));
         }
@@ -117,22 +117,17 @@ class ImageController extends AppBaseController
         $image = $this->imageRepository->find($id);
 
         if (empty($image)) {
-            Flash::error('Image not found');
+            Flash::error('Imágen no encontrada');
 
             return redirect(route('images.index'));
         }
 
         if ($newImage = $this->imageRepository->update($request->all(), $id)) {
 
-            // borrar imagen anterior 
-            $this->delete($image->path);
-
-            Flash::success('Image updated successfully.');
+            Flash::success('Imágen actualizada exitósamente.');
 
             return redirect(route('images.index'));        
         }
-
-        
     }
 
     /**
@@ -149,7 +144,7 @@ class ImageController extends AppBaseController
         $image = $this->imageRepository->find($id);
 
         if (empty($image)) {
-            Flash::error('Image not found');
+            Flash::error('Imágen no encontrada');
 
             return redirect(route('images.index'));
         }
@@ -159,23 +154,10 @@ class ImageController extends AppBaseController
             \File::delete('img/'.$image->path);
         }
 
-        Flash::success('Image deleted successfully.');
+        Flash::success('Imágen borrada exitósamente');
 
         return redirect(route('images.index'));
     }
 
-    /**
-     * Delete the specified image from storage after an update.
-     *
-     * @param string $path
-     *
-     * @throws \Exception
-     *
-     * @return Response
-     */
-    public function delete($path)
-    {
-        // borrar archivo en local
-        \File::delete('img/'.$path);
-    }
+
 }

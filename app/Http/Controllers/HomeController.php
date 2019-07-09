@@ -33,6 +33,6 @@ class HomeController extends Controller
      */
     public function landingPage()
     {
-        return view('index');
+        return view('landing_page.index');
     }
 }

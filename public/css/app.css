@@ -11206,3 +11206,7 @@ footer.footer {
   padding-bottom: 4rem;
 }
 
+[v-cloak] > * {
+  display: none;
+}
+

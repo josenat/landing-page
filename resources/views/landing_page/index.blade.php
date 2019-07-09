@@ -10,7 +10,7 @@
 </head>
 
 <body>
-	<div id="app">
+	<div id="app" v-cloak>
 	  <!-- Navigacion -->
 	  <nav class="navbar navbar-light bg-light static-top">
 	    <div class="container">
@@ -20,15 +20,12 @@
 	  </nav>
 
 	  <!-- Cabecera -->
-	  <header class="masthead text-white text-center" style="background: url(/img/bg-masthead.jpg) no-repeat center center;">
+	  <header class="masthead text-white text-center" v-bind:style="styleRow1">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">
 	        <div class="col-xl-9 mx-auto">
-	          <h1 class="mb-5" >
-				<app-title title_id="1" rows="5"></app-title>
-	          </h1>
-	          <!-- ¡Cree una página de destino para su negocio o proyecto y genere más clientes potenciales! -->
+	          <h1 class="mb-5" v-cloak v-html="title_1"></h1>
 	        </div>
 	        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 	          <form>
@@ -51,36 +48,33 @@
 	    <div class="container-fluid p-0">
 	      <div class="row no-gutters">
 
-	        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+	        <div class="col-lg-6 order-lg-2 text-white showcase-img" v-bind:style="styleRow2"></div>
 	        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-	          <h2>Diseño Totalmente Responsivo</h2>
-	          <p class="lead mb-0">Cuando usa un tema creado por Start Bootstrap, sabe que el tema se verá bien en cualquier dispositivo, ya sea en un teléfono, tableta o escritorio, ¡la página se comportará de manera responsable!</p>
+	          <p class="lead mb-0" v-html="title_2"></p>
 	        </div>
 	      </div>
 	      <div class="row no-gutters">
-	        <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
+	        <div class="col-lg-6 text-white showcase-img" v-bind:style="styleRow3"></div>
 	        <div class="col-lg-6 my-auto showcase-text">
-	          <h2>Actualizado para Bootstrap 4</h2>
-	          <p class="lead mb-0">¡Mejorado recientemente, y lleno de excelentes clases de utilidad, Bootstrap 4 está liderando el camino en el desarrollo web móvil sensible! ¡Todos los temas en Start Bootstrap ahora están usando Bootstrap 4!</p>
+	          <p class="lead mb-0" v-html="title_3"></p>
 	        </div>
 	      </div>
 	      <div class="row no-gutters">
-	        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+	        <div class="col-lg-6 order-lg-2 text-white showcase-img" v-bind:style="styleRow4"></div>
 	        <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-	          <h2>Fácil de Usar y Personalizar</h2>
-	          <p class="lead mb-0">La página de destino es solo HTML y CSS con un toque de SCSS para los usuarios que exigen opciones de personalización más profundas. Fuera de la caja, simplemente agregue su contenido e imágenes, ¡y su nueva página de destino estará lista para funcionar!</p>
+	          <p class="lead mb-0" v-html="title_4"></p>
 	        </div>
 	      </div>
 	    </div>
 	  </section>
 
 	  <!-- Llamadas de Acción -->
-	  <section class="call-to-action text-white text-center" style="margin-top: 60px; background: url(/img/bg-showcase-4.jpg) no-repeat center center;">
+	  <section class="call-to-action text-white text-center" v-bind:style="styleRow5 ">
 	    <div class="overlay"></div>
 	    <div class="container">
 	      <div class="row">
 	        <div class="col-xl-9 mx-auto">
-	          <h2 class="mb-4">¿Listo para comenzar? ¡Regístrate ahora!</h2>
+	          <h2 class="mb-4" v-html="title_5"></h2>
 	        </div>
 	        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
 	          <form>

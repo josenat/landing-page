@@ -2,7 +2,7 @@
     <table class="table" id="imageTitles-table">
         <thead>
             <tr>
-                <th> Posición           </th>
+                <th> Fila               </th>
                 <th> Título             </th>
                 <th> Imágen             </th>
                 <th colspan="3"> Acción </th>
@@ -15,7 +15,7 @@
                     {!! $imageTitle->row_num !!} 
                 </td>
                 <td> 
-                    {!! $imageTitle->title->description !!} 
+                    {!! substr($imageTitle->title->description, 0, 160) !!}...  
                 </td>
                 <td> <img src="{{ asset('img/'.$imageTitle->image->path) }}" class="img-responsive" style="width: 150px; height: 85px;" title="{{ $imageTitle->image->path }}">
                 </td>

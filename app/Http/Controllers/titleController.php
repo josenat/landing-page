@@ -75,7 +75,7 @@ class TitleController extends AppBaseController
 
         $title = $this->titleRepository->create($input);
 
-        Flash::success('Title saved successfully.');
+        Flash::success('Título registrado exitósamente.');
 
         return redirect(route('titles.index'));
     }
@@ -92,7 +92,7 @@ class TitleController extends AppBaseController
         $title = $this->titleRepository->find($id);
 
         if (empty($title)) {
-            Flash::error('Title not found');
+            Flash::error('Título no encontrado');
 
             return redirect(route('titles.index'));
         }
@@ -112,7 +112,7 @@ class TitleController extends AppBaseController
         $title = $this->titleRepository->find($id);
 
         if (empty($title)) {
-            Flash::error('Title not found');
+            Flash::error('Título no encontrado');
 
             return redirect(route('titles.index'));
         }
@@ -133,14 +133,14 @@ class TitleController extends AppBaseController
         $title = $this->titleRepository->find($id);
 
         if (empty($title)) {
-            Flash::error('Title not found');
+            Flash::error('Título no encontrado');
 
             return redirect(route('titles.index'));
         }
 
         $title = $this->titleRepository->update($request->all(), $id);
 
-        Flash::success('Title updated successfully.');
+        Flash::success('Título actualizado exitósamente.');
 
         return redirect(route('titles.index'));
     }
@@ -159,14 +159,14 @@ class TitleController extends AppBaseController
         $title = $this->titleRepository->find($id);
 
         if (empty($title)) {
-            Flash::error('Title not found');
+            Flash::error('Título no encontrado');
 
             return redirect(route('titles.index'));
         }
 
         $this->titleRepository->delete($id);
 
-        Flash::success('Title deleted successfully.');
+        Flash::success('Título borrado exitósamente');
 
         return redirect(route('titles.index'));
     }

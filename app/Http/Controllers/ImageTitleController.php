@@ -32,7 +32,18 @@ class ImageTitleController extends AppBaseController
      */
     public function index(Request $request)
     { 
+
         $imageTitles = ImageTitle::orderBy("row_num","asc")->get();
+
+        // si la solicitud es a tavés de ajax
+        if ($request->ajax()) {
+            foreach ($imageTitles as $key) {
+                $titles[$key->row_num] = $key->title;
+                $images[$key->row_num] = $key->image;
+            }
+            return response()->json(["titles" => $titles, "images" => $images]);
+        }
+        
         return view('image_titles.index')
             ->with('imageTitles', $imageTitles);
     }
@@ -71,7 +82,7 @@ class ImageTitleController extends AppBaseController
 
         $imageTitle = $this->imageTitleRepository->create($input);
 
-        Flash::success('Image-Title saved successfully.');
+        Flash::success('Relación registrada exitósamente.');
 
         return redirect(route('imageTitles.index'));
     }
@@ -88,7 +99,7 @@ class ImageTitleController extends AppBaseController
         $imageTitle = $this->imageTitleRepository->find($id);
 
         if (empty($imageTitle)) {
-            Flash::error('Image Title not found');
+            Flash::error('Relación no encontrada');
 
             return redirect(route('imageTitles.index'));
         }
@@ -108,7 +119,7 @@ class ImageTitleController extends AppBaseController
         $imageTitle = $this->imageTitleRepository->find($id);
 
         if (empty($imageTitle)) {
-            Flash::error('Image Title not found');
+            Flash::error('Relación no encontrada');
 
             return redirect(route('imageTitles.index'));
         }
@@ -132,22 +143,24 @@ class ImageTitleController extends AppBaseController
         $imageTitle = $this->imageTitleRepository->find($id);
 
         if (empty($imageTitle)) {
-            Flash::error('Image Title not found');
+            Flash::error('Relación no encontrada');
 
             return redirect(route('imageTitles.index'));
         }
         
         // validar si la fila seleccionada ya está en uso
-        $row_num = ImageTitle::where('row_num',$request{'row_num'})->get();
-        if (count($row_num) >= 1) {
-            Flash::error('La fila seleccionada ya está en uso por otra relación.');
+        if ($request{'row_num'} != $imageTitle->row_num) {
+            $row_num = ImageTitle::where('row_num',$request{'row_num'})->get();
+            if (count($row_num) >= 1) {
+                Flash::error('La fila seleccionada ya está en uso por otra relación.');
 
-            return redirect(route('imageTitles.index'));
+                return redirect(route('imageTitles.index'));
+            }
         }
 
         $imageTitle = $this->imageTitleRepository->update($request->all(), $id);
 
-        Flash::success('Image Title updated successfully.');
+        Flash::success('Relación actualizada exitósamente.');
 
         return redirect(route('imageTitles.index'));
     }
@@ -166,14 +179,14 @@ class ImageTitleController extends AppBaseController
         $imageTitle = $this->imageTitleRepository->find($id);
 
         if (empty($imageTitle)) {
-            Flash::error('Image Title not found');
+            Flash::error('Relación no encontrada');
 
             return redirect(route('imageTitles.index'));
         }
 
         $this->imageTitleRepository->delete($id);
 
-        Flash::success('Image Title deleted successfully.');
+        Flash::success('Relación borrada exitósamente');
 
         return redirect(route('imageTitles.index'));
     }
